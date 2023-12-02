@@ -35,6 +35,3 @@ host-suffix, tendawifi.com, direct
 host-suffix, zte.home, direct
 host-suffix, tplogin.cn, direct
 host-suffix, wifi.cmcc, direct
-
-geoip, cn, direct
-final, Final
