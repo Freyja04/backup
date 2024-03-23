@@ -1,5 +1,5 @@
-const { proxyName,backupName } = $arguments
-console.log(proxyName,backupName)
+const { proxyName, backupName } = $arguments
+
 let config = JSON.parse($files[0]) // 文件中的第一个
 let proxies = await produceArtifact({
     type: 'subscription', // 如果是组合订阅 就是 'collection'
@@ -10,7 +10,7 @@ let proxies = await produceArtifact({
 
 let backup = await produceArtifact({
     type: 'subscription', // 如果是组合订阅 就是 'collection'
-    backupName: backupName, // 订阅的"名称", 不是"显示名称"
+    name: backupName, // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
