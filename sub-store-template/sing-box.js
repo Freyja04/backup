@@ -3,14 +3,14 @@ console.log(proxyName,backupName)
 let config = JSON.parse($files[0]) // 文件中的第一个
 let proxies = await produceArtifact({
     type: 'subscription', // 如果是组合订阅 就是 'collection'
-    name: proxyName.proxyName, // 订阅的"名称", 不是"显示名称"
+    name: proxyName, // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
 
 let backup = await produceArtifact({
     type: 'subscription', // 如果是组合订阅 就是 'collection'
-    backupName: backupName.backupName, // 订阅的"名称", 不是"显示名称"
+    backupName: backupName, // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
