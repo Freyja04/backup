@@ -1,16 +1,16 @@
-const { proxyName, backupName } = $arguments
+const { name1, type1, name2, type2 } = $arguments
 
 let config = JSON.parse($files[0]) // 文件中的第一个
 let proxies = await produceArtifact({
-    type: 'subscription', // 如果是组合订阅 就是 'collection'
-    name: proxyName, // 订阅的"名称", 不是"显示名称"
+    type: /^1$|subscription/i.test(type1) ? 'subscription' : 'collection', // 如果是组合订阅 就是 'collection'
+    name: name1, // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
 
 let backup = await produceArtifact({
-    type: 'subscription', // 如果是组合订阅 就是 'collection'
-    name: backupName, // 订阅的"名称", 不是"显示名称"
+    type: /^1$|subscription/i.test(type2) ? 'subscription' : 'collection', // 如果是组合订阅 就是 'collection'
+    name: name2, // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
