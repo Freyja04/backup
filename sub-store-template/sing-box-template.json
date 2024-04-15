@@ -154,69 +154,61 @@
   },
   "outbounds": [
     {
-      "tag": "backup",
+      "tag": "Freyja",
       "type": "selector",
-      "outbounds": [
-
-      ]
+      "outbounds": []
+    },
+    {
+      "tag": "subscription1",
+      "type": "selector",
+      "outbounds": []
+    },
+    {
+      "tag": "subscription2",
+      "type": "selector",
+      "outbounds": []
     },
     {
       "tag": "global",
       "type": "selector",
-      "outbounds": [
-        "backup"
-      ],
-      "default": "backup"
+      "outbounds": ["Freyja","subscription1","subscription2"],
+      "default": "subscription1"
     },
     {
       "tag": "google",
       "type": "selector",
-      "outbounds": [
-        "backup"
-      ],
-      "default": "backup"
+      "outbounds": ["Freyja","subscription1","subscription2"],
+      "default": "subscription1"
     },
     {
       "tag": "telegram",
       "type": "selector",
-      "outbounds": [
-        "backup"
-      ],
-      "default": "backup"
+      "outbounds": ["Freyja","subscription1","subscription2"],
+      "default": "subscription1"
     },
     {
       "tag": "openai",
       "type": "selector",
-      "outbounds": [
-        "backup"
-      ],
-      "default": "backup"
+      "outbounds": ["Freyja","subscription1","subscription2"],
+      "default": "subscription1"
     },
     {
       "tag": "apple",
       "type": "selector",
-      "outbounds": [
-        "direct",
-        "backup"
-      ],
+      "outbounds": ["Freyja","subscription1","subscription2","direct"],
       "default": "direct"
     },
     {
       "tag": "cn",
       "type": "selector",
-      "outbounds": [
-        "direct"
-      ],
+      "outbounds": ["Freyja","subscription1","subscription2","direct"],
       "default": "direct"
     },
     {
       "tag": "final",
       "type": "selector",
-      "outbounds": [
-        "direct",
-        "backup"
-      ],
-      "default": "backup"
+      "outbounds": ["Freyja","subscription1","subscription2","direct"],
+      "default": "Freyja"
     },
     {
       "tag": "direct",

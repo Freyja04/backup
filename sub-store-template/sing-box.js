@@ -1,29 +1,34 @@
-const { name1, type1, name2, type2 } = $arguments
-
 let config = JSON.parse($files[0]) // 文件中的第一个
-let proxies = await produceArtifact({
-    type: /^1$|subscription/i.test(type1) ? 'subscription' : 'collection', // 如果是组合订阅 就是 'collection'
-    name: name1, // 订阅的"名称", 不是"显示名称"
+let freyja = await produceArtifact({
+    type: 'subscription', // subscription单挑订阅 collection组合订阅
+    name: 'Freyja', // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
 
-let backup = await produceArtifact({
-    type: /^1$|subscription/i.test(type2) ? 'subscription' : 'collection', // 如果是组合订阅 就是 'collection'
-    name: name2, // 订阅的"名称", 不是"显示名称"
+let subscription1 = await produceArtifact({
+    type: 'collection',
+    name: 'subscription1',
     platform: 'sing-box',
     produceType: 'internal'
+})
+
+let subscription2 = await produceArtifact({
+  type: 'collection',
+  name: 'subscription2',
+  platform: 'sing-box',
+  produceType: 'internal'
 })
 
 // 先将全部节点结构插到 outbounds
-config.outbounds.push(...proxies,...backup)
+config.outbounds.push(...freyja,...subscription1,...subscription2)
 
 config.outbounds.map(i => {
-  if (['backup'].includes(i.tag)) {
-    i.outbounds.push(...backup.map(p => p.tag))
+  if (['Freyja'].includes(i.tag)) {
+    i.outbounds.push(...freyja.map(p => p.tag))
   }
   if (['global','google','twitter','telegram','openai','github','tiktok','apple','microsoft','final'].includes(i.tag)) {
-    i.outbounds.push(...proxies.map(p => p.tag))
+    i.outbounds.push(...freyja.map(p => p.tag))
   }
 })
 
