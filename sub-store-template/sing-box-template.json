@@ -167,43 +167,43 @@
       "outbounds": []
     },
     {
-      "tag": "subscription1",
+      "tag": "Subscription1",
       "type": "selector",
       "outbounds": []
     },
     {
-      "tag": "subscription2",
+      "tag": "Subscription2",
       "type": "selector",
       "outbounds": []
     },
     {
       "tag": "global",
       "type": "selector",
-      "outbounds": ["subscription1","subscription2","Freyja"],
-      "default": "subscription1"
+      "outbounds": ["Subscription1","Subscription2","Freyja"],
+      "default": "Subscription1"
     },
     {
       "tag": "google",
       "type": "selector",
-      "outbounds": ["subscription1","subscription2"],
-      "default": "subscription1"
+      "outbounds": ["Subscription1","Subscription2"],
+      "default": "Subscription1"
     },
     {
       "tag": "telegram",
       "type": "selector",
-      "outbounds": ["subscription1","subscription2"],
-      "default": "subscription1"
+      "outbounds": ["Subscription1","Subscription2"],
+      "default": "Subscription1"
     },
     {
       "tag": "openai",
       "type": "selector",
-      "outbounds": ["subscription1","subscription2"],
-      "default": "subscription1"
+      "outbounds": ["Subscription1","Subscription2"],
+      "default": "Subscription1"
     },
     {
       "tag": "apple",
       "type": "selector",
-      "outbounds": ["subscription1","subscription2"],
+      "outbounds": ["Subscription1","Subscription2"],
       "default": "direct"
     },
     {
@@ -215,7 +215,7 @@
     {
       "tag": "final",
       "type": "selector",
-      "outbounds": ["subscription1","subscription2","Freyja","direct"],
+      "outbounds": ["Subscription1","Subscription2","Freyja","direct"],
       "default": "Freyja"
     }
   ],

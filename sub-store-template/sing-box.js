@@ -1,21 +1,25 @@
+const { name1, name2, name3 } = $arguments
 let config = JSON.parse($files[0]) // 文件中的第一个
+//获取单条订阅
 let freyja = await produceArtifact({
-    type: 'subscription', // subscription单挑订阅 collection组合订阅
-    name: 'Freyja', // 订阅的"名称", 不是"显示名称"
+    type: 'subscription', // subscription单条订阅 collection组合订阅
+    name: name1, // 订阅的"名称", 不是"显示名称"
     platform: 'sing-box',
     produceType: 'internal'
 })
 
+//获取组合订阅1
 let subscription1 = await produceArtifact({
     type: 'collection',
-    name: 'subscription1',
+    name: name2,
     platform: 'sing-box',
     produceType: 'internal'
 })
 
+//获取组合订阅2
 let subscription2 = await produceArtifact({
   type: 'collection',
-  name: 'subscription2',
+  name: name3,
   platform: 'sing-box',
   produceType: 'internal'
 })
@@ -27,10 +31,10 @@ config.outbounds.map(i => {
   if (['Freyja'].includes(i.tag)) {
     i.outbounds.push(...freyja.map(p => p.tag))
   }
-  if (['subscription1'].includes(i.tag)) {
+  if (['Subscription1'].includes(i.tag)) {
     i.outbounds.push(...subscription1.map(p => p.tag))
   }
-  if (['subscription2'].includes(i.tag)) {
+  if (['Subscription2'].includes(i.tag)) {
     i.outbounds.push(...subscription2.map(p => p.tag))
   }
   if (['google','twitter','telegram','openai','github','tiktok','apple','microsoft'].includes(i.tag)) {
