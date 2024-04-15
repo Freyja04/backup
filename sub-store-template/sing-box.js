@@ -27,7 +27,7 @@ config.outbounds.map(i => {
   if (['Freyja'].includes(i.tag)) {
     i.outbounds.push(...freyja.map(p => p.tag))
   }
-  if (['subscription'].includes(i.tag)) {
+  if (['subscription1'].includes(i.tag)) {
     i.outbounds.push(...subscription1.map(p => p.tag))
   }
   if (['subscription2'].includes(i.tag)) {
