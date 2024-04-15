@@ -27,7 +27,13 @@ config.outbounds.map(i => {
   if (['Freyja'].includes(i.tag)) {
     i.outbounds.push(...freyja.map(p => p.tag))
   }
-  if (['global','google','twitter','telegram','openai','github','tiktok','apple','microsoft','final'].includes(i.tag)) {
+  if (['subscription'].includes(i.tag)) {
+    i.outbounds.push(...subscription1.map(p => p.tag))
+  }
+  if (['subscription2'].includes(i.tag)) {
+    i.outbounds.push(...subscription2.map(p => p.tag))
+  }
+  if (['google','twitter','telegram','openai','github','tiktok','apple','microsoft'].includes(i.tag)) {
     i.outbounds.push(...freyja.map(p => p.tag))
   }
 })
