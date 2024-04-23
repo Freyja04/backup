@@ -74,16 +74,12 @@
         "outbound": "openai"
       },
       {
+        "rule_set": "github",
+        "outbound": "github"
+      },
+      {
         "rule_set": "telegram",
         "outbound": "telegram"
-      },
-      {
-        "rule_set": "youtube",
-        "outbound": "google"
-      },
-      {
-        "rule_set": "google",
-        "outbound": "google"
       },
       {
         "rule_set": "apple",
@@ -107,24 +103,17 @@
         "download_detour": "global"
       },
       {
+        "tag": "github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
+        "download_detour": "global"
+      },
+      {
         "tag": "telegram",
         "type": "remote",
         "format": "binary",
         "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/mixed/telegram.srs",
-        "download_detour": "global"
-      },
-      {
-        "tag": "youtube",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/geosite/youtube.srs",
-        "download_detour": "global"
-      },
-      {
-        "tag": "google",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo-lite/mixed/google.srs",
         "download_detour": "global"
       },
       {
@@ -172,33 +161,38 @@
       "outbounds": []
     },
     {
-      "tag": "global",
+      "tag": "Freyja",
       "type": "selector",
-      "outbounds": ["Subscription1","Subscription2"],
-      "default": "Subscription1"
+      "outbounds": []
     },
     {
-      "tag": "google",
+      "tag": "global",
       "type": "selector",
-      "outbounds": ["Subscription1","Subscription2"],
+      "outbounds": ["Subscription1","Subscription2","Freyja","direct"],
       "default": "Subscription1"
     },
     {
       "tag": "telegram",
       "type": "selector",
-      "outbounds": ["Subscription1","Subscription2"],
+      "outbounds": ["Subscription1","Subscription2","Freyja"],
+      "default": "Subscription1"
+    },
+    {
+      "tag": "github",
+      "type": "selector",
+      "outbounds": ["Subscription1","Subscription2","Freyja"],
       "default": "Subscription1"
     },
     {
       "tag": "openai",
       "type": "selector",
-      "outbounds": ["Subscription1","Subscription2"],
+      "outbounds": ["Subscription1","Subscription2","Freyja"],
       "default": "Subscription1"
     },
     {
       "tag": "apple",
       "type": "selector",
-      "outbounds": ["Subscription1","Subscription2","direct"],
+      "outbounds": ["Subscription1","Subscription2","Freyja","direct"],
       "default": "direct"
     },
     {
@@ -210,7 +204,7 @@
     {
       "tag": "final",
       "type": "selector",
-      "outbounds": ["Subscription1","Subscription2","direct"],
+      "outbounds": ["Subscription1","Subscription2","Freyja","direct"],
       "default": "direct"
     }
   ],
