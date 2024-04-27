@@ -70,14 +70,6 @@
         "outbound": "global"
       },
       {
-        "rule_set": "openai",
-        "outbound": "openai"
-      },
-      {
-        "rule_set": "github",
-        "outbound": "github"
-      },
-      {
         "rule_set": "telegram",
         "outbound": "telegram"
       },
@@ -95,20 +87,6 @@
       }
     ],
     "rule_set": [
-      {
-        "tag": "openai",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/openai.srs",
-        "download_detour": "global"
-      },
-      {
-        "tag": "github",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geosite/github.srs",
-        "download_detour": "global"
-      },
       {
         "tag": "telegram",
         "type": "remote",
@@ -173,18 +151,6 @@
     },
     {
       "tag": "telegram",
-      "type": "selector",
-      "outbounds": ["Subscription1","Subscription2","Freyja"],
-      "default": "Subscription1"
-    },
-    {
-      "tag": "github",
-      "type": "selector",
-      "outbounds": ["Subscription1","Subscription2","Freyja"],
-      "default": "Subscription1"
-    },
-    {
-      "tag": "openai",
       "type": "selector",
       "outbounds": ["Subscription1","Subscription2","Freyja"],
       "default": "Subscription1"
