@@ -76,7 +76,13 @@ async function operator(proxies = [], targetPlatform, context) {
   
     const target = isLoon ? 'Loon' : isSurge ? 'Surge' : undefined
     const concurrency = parseInt($arguments.concurrency || 10) // 一组并发数
-  
+
+    const blockKeywords = /群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|余额|失联|邮件|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|USE|USED|TOTAL|EXPIRE|EMAIL|Panel/i;
+    const filteredProxies = proxies.filter(proxy => !blockKeywords.test(proxy.name));
+    if (filteredProxies.length > 0) {
+      proxies = filteredProxies;
+    }
+
     await executeAsyncTasks(
       proxies.map(proxy => () => check(proxy)),
       { concurrency }
