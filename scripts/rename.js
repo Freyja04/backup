@@ -139,6 +139,10 @@ function ObjKA(i) {
 }
 
 function operator(pro) {
+  const proxyArr = [...pro];
+  console.log(proxyArr);
+  FNAME = proxyArr[0]._subName;
+  console.log(FNAME)
   const Allmap = {};
   const outList = getList(outputName);
   let inputList,
