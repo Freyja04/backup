@@ -56,7 +56,6 @@ const nx = inArg.nx || false,
 
 const FGF = inArg.fgf == undefined ? " " : decodeURI(inArg.fgf),
   XHFGF = inArg.sn == undefined ? " " : decodeURI(inArg.sn),
-  FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
   BLKEY = inArg.blkey == undefined ? "" : decodeURI(inArg.blkey),
   blockquic = inArg.blockquic == undefined ? "" : decodeURI(inArg.blockquic),
   nameMap = {
@@ -132,6 +131,7 @@ const rurekey = {
   Esnc: /esnc/gi,
 };
 
+let FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name)
 let GetK = false, AMK = []
 function ObjKA(i) {
   GetK = true
@@ -139,13 +139,9 @@ function ObjKA(i) {
 }
 
 function operator(pro) {
-  const proxyArr = [...pro];
-  console.log(proxyArr);
-  if(proxyArr.length > 0) {
-    FNAME = proxyArr[0]._subName;
-    console.log(FNAME)
+  if(pro.length > 0) {
+    FNAME = pro[0]._subName;
   }
-  
   const Allmap = {};
   const outList = getList(outputName);
   let inputList,
