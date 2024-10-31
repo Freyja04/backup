@@ -139,9 +139,6 @@ function ObjKA(i) {
 }
 
 function operator(pro) {
-  if(pro.length > 0) {
-    FNAME = pro[0]._subName;
-  }
   const Allmap = {};
   const outList = getList(outputName);
   let inputList,
@@ -173,6 +170,9 @@ function operator(pro) {
   const BLKEYS = BLKEY ? BLKEY.split("+") : "";
 
   pro.forEach((e) => {
+    if(pro.length > 0) {
+      FNAME = e._subName
+    }
     let bktf = false, ens = e.name
     // 预处理 防止预判或遗漏
     Object.keys(rurekey).forEach((ikey) => {
