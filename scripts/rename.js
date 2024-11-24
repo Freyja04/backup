@@ -82,7 +82,7 @@ const specialRegex = [
   /IPLC|IEPL|Kern|Edge|Pro|Std|Exp|Biz|Fam|Game|Buy|Zx|LB|Game/,
 ];
 const nameclear =
-  /(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|余额|失联|邮件|贩卖|软件|证书|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|AFF|USE|USED|TOTAL|EXPIRE|EMAIL|Panel)/i;
+  /(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|余额|失联|邮件|贩卖|软件|证书|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|TLS|AFF|USE|USED|TOTAL|EXPIRE|EMAIL|Panel)/i;
 // prettier-ignore
 const regexArray=[/ˣ²/, /ˣ³/, /ˣ⁴/, /ˣ⁵/, /ˣ⁶/, /ˣ⁷/, /ˣ⁸/, /ˣ⁹/, /ˣ¹⁰/, /ˣ²⁰/, /ˣ³⁰/, /ˣ⁴⁰/, /ˣ⁵⁰/, /IPLC/i, /IEPL/i, /核心/, /边缘/, /高级/, /标准/, /实验/, /商宽/, /家宽/, /游戏|game/i, /购物/, /专线/, /LB/, /cloudflare/i, /\budp\b/i, /\bgpt\b/i,/udpn\b/];
 // prettier-ignore
