@@ -1,4 +1,5 @@
 #!name= 美团去广告
+#!desc= 美团去广告
 #!tag = 去广告
 
 [rewrite]
@@ -20,5 +21,5 @@
 
 ^https:\/\/p0\.meituan\.net\/linglong\/7ae4f2836035e4b439e58476985592142777\.png($|\.webp($|@[^\s]+)) reject
 
-[mitm]
+[host]
 img.meituan.net,s3plus.meituan.net,flowplus.meituan.net,p0.meituan.net,p1.meituan.net
