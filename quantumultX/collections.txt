@@ -30,3 +30,6 @@ https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/UnlockVip/Spotify.co
 
 #youtube
 https://raw.githubusercontent.com/ddgksf2013/Rewrite/master/AdBlock/YoutubeAds.conf
+
+#pornhub
+https://raw.githubusercontent.com/ddgksf2013/Scripts/master/pornhub.js
